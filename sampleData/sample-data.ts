@@ -122,6 +122,10 @@ const sampleCategories = [
         name: "Woman",
         icon: "/images/icons/womanFashion.png",
       },
+      {
+        name: "Kids",
+        icon: "/images/icons/womanFashion.png",
+      },
     ],
   },
   {
@@ -140,6 +144,18 @@ const sampleCategories = [
         name: "Camera",
         icon: "/images/icons/camera.png",
       },
+      {
+        name: "Television",
+        icon: "/images/icons/laptop.png",
+      },
+      {
+        name: "Camera",
+        icon: "/images/icons/camera.png",
+      },
+      {
+        name: "Television",
+        icon: "/images/icons/laptop.png",
+      },
     ],
   },
   {
@@ -154,6 +170,10 @@ const sampleCategories = [
         name: "Pulses",
         icon: "/images/icons/pulses.png",
       },
+      {
+        name: "Fresh Vegetables",
+        icon: "/images/icons/pulses.png",
+      },
     ],
   },
   {
@@ -166,6 +186,10 @@ const sampleCategories = [
       },
       {
         name: "Woman's Footwear",
+        icon: "/images/icons/womanFootwear.png",
+      },
+      {
+        name: "Kid's Footwear",
         icon: "/images/icons/womanFootwear.png",
       },
     ],
