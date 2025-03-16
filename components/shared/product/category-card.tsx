@@ -22,7 +22,7 @@ const CategoryCard = ({ categories }: any) => {
                         style={{
                           width: "90%",
                           height: "90px",
-                          background: "hsl(0deg 14.97% 95.83%)",
+                          background: "#f6f6f6",
                         }}
                       >
                         <Image
