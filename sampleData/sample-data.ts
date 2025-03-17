@@ -151,11 +151,7 @@ const sampleCategories = [
       {
         name: "Camera 2",
         icon: "/images/icons/camera.png",
-      },
-      {
-        name: "Television 2",
-        icon: "/images/icons/laptop.png",
-      },
+      }
     ],
   },
   {
