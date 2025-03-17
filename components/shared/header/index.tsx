@@ -35,7 +35,7 @@ const Header = () => {
 
           <Menu />
         </div>
-        <div className="px-8">
+        <div className="wrapper">
           <Categories />
         </div>
       </CardContent>
