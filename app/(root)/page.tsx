@@ -15,7 +15,7 @@ const Homepage = async () => {
   return (
     <>
       <CategoryCard categories={sampleCategories} />
-      <ProductList data={sampleData.products} title="Products" limit={4} />
+      <ProductList data={sampleData.products} title="Products" limit={10} />
     </>
   );
 };

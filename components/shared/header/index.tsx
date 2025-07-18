@@ -17,7 +17,7 @@ const Header = () => {
         <div className="wrapper flex-between" style={{ paddingLeft: "15px" }}>
           <div className="flex-start">
             <Link href="/" className="flex-start ml-4">
-              <Image
+              <Image unoptimized={true}
                 src="/images/kbMasaleLogo.jpg"
                 alt={`${APP_NAME} logo`}
                 height={60}

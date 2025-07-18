@@ -8,7 +8,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
 
   return (
     <div className="space-y-4">
-      <Image
+      <Image unoptimized={true}
         src={images[current]}
         alt="product image"
         width={1000}
@@ -25,7 +25,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
               current === index && "border-orange-500"
             )}
           >
-            <Image src={image} alt="image" width={100} height={100} />
+            <Image unoptimized={true} src={image} alt="image" width={100} height={100} />
           </div>
         ))}
       </div>

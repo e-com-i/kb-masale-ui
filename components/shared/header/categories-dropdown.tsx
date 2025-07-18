@@ -30,7 +30,7 @@ const CategoriesDropdown = () => {
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                   {category.icon ? (
-                    <Image
+                    <Image unoptimized={true}
                       src={category.icon}
                       alt={category.name}
                       height={15}
@@ -46,7 +46,7 @@ const CategoriesDropdown = () => {
                       <>
                         <DropdownMenuItem>
                           {subCategory.icon ? (
-                            <Image
+                            <Image unoptimized={true}
                               src={subCategory.icon}
                               alt={subCategory.name}
                               height={15}

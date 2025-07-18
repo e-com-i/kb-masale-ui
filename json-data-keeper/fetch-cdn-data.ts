@@ -16,8 +16,8 @@ if (!GITHUB_USERNAME || !REPO_NAME || !BRANCH) {
 
 // JSDelivr URLs for your separate files (with correct directory)
 //https://raw.githubusercontent.com/iFrugal/json-data-keeper/refs/heads/main/kb-masale-ui/categories.json
-const PRODUCTS_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/refs/heads/${BRANCH}/kb-masale-ui/products.json`;
-const CATEGORIES_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/refs/heads/${BRANCH}/kb-masale-ui/categories.json`;
+const PRODUCTS_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/refs/heads/${BRANCH}/kb-masale-ui/new-products.json`;
+const CATEGORIES_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/refs/heads/${BRANCH}/kb-masale-ui/new-categories.json`;
 
 
 //const PRODUCTS_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USERNAME}/${REPO_NAME}@${BRANCH}/kb-masale-ui/products.json?${Date.now()}`;
@@ -29,8 +29,8 @@ console.log("🔍 Categories URL:", CATEGORIES_URL);
 // Your original static data as immediate fallb
 
 // Create the exported objects
-const sampleData = { products: [...staticSampleData.products] };
-const sampleCategories = [...staticSampleCategories];
+const sampleData = { products: [] };
+const sampleCategories = [];
 
 // Function to load data from JSDelivr - SINGLE EXPORT
 const loadDataFromJSDelivr = async (): Promise<boolean> => {

@@ -15,7 +15,7 @@ const Footer = () => {
                 "https://www.tradeindia.com/truststamp-member/KB-MASALE-64554165/"
               }
             >
-              <Image
+              <Image unoptimized={true}
                 src="https://tiimg.tistatic.com/new_website1/general/trust_stamp/trusted-seller.svg"
                 alt="Verified Seller icon"
                 width={100}
@@ -71,7 +71,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <Image unoptimized={true}
                 src="/images/icons/facebook.png"
                 alt="Facebook"
                 width={30}
@@ -83,7 +83,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <Image unoptimized={true}
                 src="/images/icons/instagram.png"
                 alt="Instagram"
                 width={30}

@@ -30,7 +30,7 @@ export function CategoriesNavbar() {
               <NavigationMenuItem key={category.name}>
                 <NavigationMenuTrigger className="p-2">
                   {category.icon ? (
-                    <Image
+                    <Image unoptimized={true}
                       src={category.icon}
                       alt={category.name}
                       height={20}

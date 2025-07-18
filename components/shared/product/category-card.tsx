@@ -25,7 +25,7 @@ const CategoryCard = ({ categories }: any) => {
                           background: "#f6f6f6",
                         }}
                       >
-                        <Image
+                        <Image unoptimized={true}
                           src={subcategory.icon}
                           alt={subcategory.name}
                           height={20}

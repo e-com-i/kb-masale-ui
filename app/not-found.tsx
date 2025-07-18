@@ -7,7 +7,7 @@ import Link from 'next/link';
 const NotFoundPage = () => {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen'>
-      <Image
+      <Image unoptimized={true}
         src='/images/logo.svg'
         width={48}
         height={48}

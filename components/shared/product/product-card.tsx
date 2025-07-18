@@ -11,7 +11,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
     <Card className="w-full max-w-sm">
       <CardHeader className="p-0 items-center">
         <Link href={`/product/${product.slug}`}>
-          <Image
+          <Image unoptimized={true}
             src={product.images[0]}
             alt={product.name}
             height={300}
@@ -23,7 +23,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
       <CardContent className="p-4 grid gap-4">
         <div className="text-xs">{product.brand}</div>
         <Link href={`/product/${product.slug}`}>
-          <h2 className="text-sm font-medium">{product.name}</h2>
+          <h2 className="text-sm font-medium">{product.name} {product.unit}</h2>
         </Link>
         <div className="flex-between gap-4">
           {/* <Rating value={Number(product.rating)} /> */}
