@@ -1,3 +1,5 @@
+/** @format */
+
 export interface IProduct {
   name: string;
   slug: string;
