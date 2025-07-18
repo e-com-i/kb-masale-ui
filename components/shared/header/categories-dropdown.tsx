@@ -1,3 +1,5 @@
+/** @format */
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
-import { sampleCategories } from "@/sampleData/sample-data";
+import { sampleCategories } from "@/json-data-keeper/fetch-cdn-data";
 import Image from "next/image";
 
 const CategoriesDropdown = () => {
