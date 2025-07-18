@@ -18,7 +18,6 @@ import {
 import { cn } from "@/lib/utils";
 import { sampleCategories } from "@/json-data-keeper/fetch-cdn-data";
 import Image from "next/image";
-import { isNull } from "util";
 
 export function CategoriesNavbar() {
   const trendingCategories = sampleCategories.slice(0, sampleCategories.length);

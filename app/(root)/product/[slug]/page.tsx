@@ -10,6 +10,7 @@ import ProductPrice from "@/components/shared/product/product-price";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { sampleData } from "@/json-data-keeper/fetch-cdn-data";
+import { IProduct } from "@/public/types";
 import { notFound } from "next/navigation";
 
 const ProductDetailsPage = async (props: {
@@ -17,8 +18,8 @@ const ProductDetailsPage = async (props: {
 }) => {
   const { slug } = await props.params;
   const product = sampleData.products.find(
-    (product: any) => product.slug == slug
-  ) as any;
+    (product: IProduct) => product.slug == slug
+  ) as IProduct;
   if (!product) notFound();
 
   const finalPrice = product.discount
@@ -80,7 +81,6 @@ const ProductDetailsPage = async (props: {
                   <div className="flex-center">
                     <AddToCart
                       item={{
-                        productId: product.id,
                         name: product.name,
                         slug: product.slug,
                         price: product.price,
