@@ -1,4 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/**
+ * eslint-disable @typescript-eslint/no-unused-vars
+ *
+ * @format
+ */
 
 //This component could be simpler with shadcn/UI's MenuBar
 
@@ -12,7 +16,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { sampleCategories } from "@/sampleData/sample-data";
+import { sampleCategories } from "@/json-data-keeper/fetch-cdn-data";
 import Image from "next/image";
 import { isNull } from "util";
 

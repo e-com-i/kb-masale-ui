@@ -1,6 +1,8 @@
+/** @format */
+
 import { IProduct } from "@/public/types";
 
-const sampleData = {
+export const staticSampleData = {
   products: [
     {
       name: "Polo Sporting Stretch Shirt",
@@ -106,10 +108,10 @@ const sampleData = {
       isFeatured: true,
       banner: null,
     },
-  ] as IProduct[]
+  ] as IProduct[],
 };
 
-const sampleCategories = [
+export const staticSampleCategories = [
   {
     name: "Fashion",
     icon: "/images/icons/fashion.png",
@@ -151,7 +153,7 @@ const sampleCategories = [
       {
         name: "Camera 2",
         icon: "/images/icons/camera.png",
-      }
+      },
     ],
   },
   {
@@ -191,6 +193,3 @@ const sampleCategories = [
     ],
   },
 ];
-
-export {sampleData, sampleCategories};
-

@@ -1,10 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * eslint-disable @typescript-eslint/no-explicit-any
+ *
+ * @format
+ */
+
 import AddToCart from "@/components/shared/product/add-to-cart";
 import ProductImages from "@/components/shared/product/product-images";
 import ProductPrice from "@/components/shared/product/product-price";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import {sampleData} from "@/sampleData/sample-data";
+import { sampleData } from "@/json-data-keeper/fetch-cdn-data";
 import { notFound } from "next/navigation";
 
 const ProductDetailsPage = async (props: {
