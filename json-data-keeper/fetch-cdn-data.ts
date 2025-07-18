@@ -15,8 +15,13 @@ if (!GITHUB_USERNAME || !REPO_NAME || !BRANCH) {
 }
 
 // JSDelivr URLs for your separate files (with correct directory)
-const PRODUCTS_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USERNAME}/${REPO_NAME}@${BRANCH}/kb-masale-ui/products.json?${Date.now()}`;
-const CATEGORIES_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USERNAME}/${REPO_NAME}@${BRANCH}/kb-masale-ui/categories.json?${Date.now()}`;
+//https://raw.githubusercontent.com/iFrugal/json-data-keeper/refs/heads/main/kb-masale-ui/categories.json
+const PRODUCTS_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/refs/heads/${BRANCH}/kb-masale-ui/products.json`;
+const CATEGORIES_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/refs/heads/${BRANCH}/kb-masale-ui/categories.json`;
+
+
+//const PRODUCTS_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USERNAME}/${REPO_NAME}@${BRANCH}/kb-masale-ui/products.json?${Date.now()}`;
+//const CATEGORIES_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USERNAME}/${REPO_NAME}@${BRANCH}/kb-masale-ui/categories.json?${Date.now()}`;
 
 console.log("🔍 Products URL:", PRODUCTS_URL);
 console.log("🔍 Categories URL:", CATEGORIES_URL);
