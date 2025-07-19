@@ -1,0 +1,70 @@
+# .github/workflows/deploy.yml (Alternative: Single file for both branches)
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main  # Production
+      - dev   # Development
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Vercel
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Determine environment
+        id: env
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "environment=production" >> $GITHUB_OUTPUT
+            echo "hook_secret=VERCEL_DEPLOY_HOOK_MAIN" >> $GITHUB_OUTPUT
+            echo "emoji=🚀" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref_name }}" = "dev" ]; then
+            echo "environment=development" >> $GITHUB_OUTPUT
+            echo "hook_secret=VERCEL_DEPLOY_HOOK_DEV" >> $GITHUB_OUTPUT
+            echo "emoji=🧪" >> $GITHUB_OUTPUT
+          fi
+        
+      - name: Get commit info
+        id: commit
+        run: |
+          echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo "author=$(git log -1 --pretty=%an)" >> $GITHUB_OUTPUT
+          echo "hash=$(git log -1 --pretty=%h)" >> $GITHUB_OUTPUT
+        
+      - name: Trigger Vercel Deploy
+        id: deploy
+        run: |
+          echo "${{ steps.env.outputs.emoji }} Triggering ${{ steps.env.outputs.environment }} deployment..."
+          
+          if [ "${{ steps.env.outputs.hook_secret }}" = "VERCEL_DEPLOY_HOOK_MAIN" ]; then
+            hook_url="${{ secrets.VERCEL_DEPLOY_HOOK_MAIN }}"
+          else
+            hook_url="${{ secrets.VERCEL_DEPLOY_HOOK_DEV }}"
+          fi
+          
+          response=$(curl -s -w "HTTPSTATUS:%{http_code}" -X POST "$hook_url")
+          http_code=$(echo $response | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+          
+          if [ $http_code -eq 200 ] || [ $http_code -eq 201 ]; then
+            echo "✅ Deploy hook triggered successfully"
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Deploy hook failed with status: $http_code"
+            echo "status=failure" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+        
+      - name: Deployment Success
+        if: steps.deploy.outputs.status == 'success'
+        run: |
+          echo "🎉 ${{ steps.env.outputs.environment }} deployment triggered!"
+          echo "📝 Commit: ${{ steps.commit.outputs.message }}"
+          echo "👤 Author: ${{ steps.commit.outputs.author }}"
+          echo "🔗 Hash: ${{ steps.commit.outputs.hash }}"
+          echo "🌍 Branch: ${{ github.ref_name }}"
+          echo "🔄 Environment: ${{ steps.env.outputs.environment }}"
